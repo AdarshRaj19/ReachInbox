@@ -5,9 +5,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "typecheck": "tsc --noEmit"
-  },
+  "dev": "tsx watch src/index.ts",
+  "typecheck": "tsc --noEmit",
+  "build": "tsc",
+  "start": "node dist/index.js"
+}
   "keywords": [],
   "author": "",
   "license": "ISC",
