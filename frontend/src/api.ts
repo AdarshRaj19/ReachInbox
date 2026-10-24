@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://reachinbox-backend-kj0q.onrender.com";
 const credentials: RequestCredentials = "include";
 export async function checkBackend() {
   const response = await fetch(`${API_BASE_URL}/health`, {
