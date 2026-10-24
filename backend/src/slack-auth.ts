@@ -39,7 +39,7 @@ router.get("/connect", (req: Request, res: Response) => {
   const params = new URLSearchParams({
     client_id: clientId,
     scope: "chat:write",
-    redirect_uri: "http://localhost:3000/auth/slack/callback",
+    redirect_uri: `${process.env.BACKEND_URL || "http://localhost:3000"}/auth/slack/callback`,
     state,
   });
 
@@ -81,7 +81,7 @@ router.get("/callback", async (req: Request, res: Response) => {
       code,
       client_id: process.env.SLACK_CLIENT_ID ?? "",
       client_secret: process.env.SLACK_CLIENT_SECRET ?? "",
-      redirect_uri: "http://localhost:3000/auth/slack/callback",
+      redirect_uri: `${process.env.BACKEND_URL || "http://localhost:3000"}/auth/slack/callback`,
     });
 
     const response = await fetch("https://slack.com/api/oauth.v2.access", {
